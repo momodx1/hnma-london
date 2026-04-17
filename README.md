@@ -1,2 +1,0 @@
-# hnma-london
-hnma london
