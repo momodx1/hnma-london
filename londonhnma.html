@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة لندن ✈️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F9F5EE;
+    --cream-dark: #EFE9DD;
+    --navy: #152040;
+    --navy-light: #1E3060;
+    --gold: #C4973A;
+    --gold-light: #E2BA6A;
+    --gold-pale: #F7EDD8;
+    --charcoal: #2A2A2A;
+    --text-muted: #7A7268;
+    --white: #FFFFFF;
+    --card-shadow: 0 4px 30px rgba(21,32,64,0.08);
+    --card-shadow-hover: 0 12px 50px rgba(21,32,64,0.15);
+    --radius: 18px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    direction: rtl;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, #1A3A6A 100%);
+    color: var(--white);
+    padding: 70px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-plane {
+    font-size: 3.5rem;
+    animation: float 3s ease-in-out infinite;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+  }
+
+  .hero-title {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    opacity: 0.75;
+    font-weight: 300;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .hero-travelers {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* ===== SUMMARY CARD ===== */
+  .summary-wrapper {
+    max-width: 900px;
+    margin: -40px auto 0;
+    padding: 0 16px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .summary-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow-hover);
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    border-top: 4px solid var(--gold);
+    animation: slideUp 0.6s ease both;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .summary-item {
+    text-align: center;
+  }
+
+  .summary-icon {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .summary-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+
+  .summary-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ===== NAVIGATION ===== */
+  .nav-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(21,32,64,0.1);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-sticky::-webkit-scrollbar { display: none; }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 16px;
+    min-width: max-content;
+  }
+
+  .nav-btn {
+    background: none;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-btn:hover,
+  .nav-btn.active {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .nav-btn.active {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    box-shadow: 0 4px 12px rgba(21,32,64,0.25);
+  }
+
+  /* ===== EDIT MODE TOGGLE ===== */
+  .edit-toggle-bar {
+    max-width: 900px;
+    margin: 28px auto 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .edit-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .edit-toggle-btn:hover,
+  .edit-toggle-btn.active {
+    background: var(--gold);
+    color: var(--white);
+  }
+
+  .save-btn {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: 50px;
+    border: 2px solid #2ecc71;
+    background: transparent;
+    color: #2ecc71;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .save-btn.visible { display: inline-flex; }
+  .save-btn:hover { background: #2ecc71; color: white; }
+
+  /* ===== MAIN CONTENT ===== */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 16px 80px;
+  }
+
+  /* ===== DAY CARD ===== */
+  .day-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 28px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    animation: fadeCard 0.5s ease both;
+  }
+
+  .day-card:hover { box-shadow: var(--card-shadow-hover); }
+
+  @keyframes fadeCard {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-card:nth-child(1) { animation-delay: 0.1s; }
+  .day-card:nth-child(2) { animation-delay: 0.15s; }
+  .day-card:nth-child(3) { animation-delay: 0.2s; }
+  .day-card:nth-child(4) { animation-delay: 0.25s; }
+  .day-card:nth-child(5) { animation-delay: 0.3s; }
+  .day-card:nth-child(6) { animation-delay: 0.35s; }
+  .day-card:nth-child(7) { animation-delay: 0.4s; }
+  .day-card:nth-child(8) { animation-delay: 0.45s; }
+
+  /* Day Header */
+  .day-header {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .day-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .day-number {
+    background: var(--gold);
+    color: var(--white);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(196,151,58,0.4);
+  }
+
+  .day-title {
+    color: var(--white);
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 700;
+  }
+
+  .day-date {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.82rem;
+    font-weight: 400;
+    margin-top: 2px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .day-emoji {
+    font-size: 1.8rem;
+    opacity: 0.9;
+  }
+
+  /* Day Body */
+  .day-body {
+    padding: 24px 28px;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding-right: 28px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--cream-dark));
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 22px;
+    padding-right: 20px;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    right: -28px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+    flex-shrink: 0;
+  }
+
+  .timeline-dot.highlight {
+    width: 18px;
+    height: 18px;
+    right: -30px;
+    background: var(--navy);
+    box-shadow: 0 0 0 3px var(--navy);
+  }
+
+  /* ===== TIME BADGE ===== */
+  .time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--gold-pale);
+    color: var(--gold);
+    border: 1px solid #E8CFA0;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ===== SECTION HEADINGS ===== */
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--cream-dark);
+  }
+
+  /* ===== PLACE CHIPS ===== */
+  .places-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .place-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .place-chip:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(21,32,64,0.15);
+  }
+
+  .place-chip .map-icon {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  /* ===== SPECIAL CARDS ===== */
+  .highlight-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    color: var(--white);
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .highlight-card .icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .highlight-card .content h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+
+  .highlight-card .content p {
+    font-size: 0.83rem;
+    opacity: 0.75;
+  }
+
+  .gold-card {
+    background: linear-gradient(135deg, #F7EDD8, #EEE0C0);
+    border: 1px solid #E2C98A;
+    border-right: 4px solid var(--gold);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin: 10px 0;
+  }
+
+  .gold-card h4 {
+    color: var(--navy);
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .gold-card p {
+    color: #6B5A40;
+    font-size: 0.83rem;
+  }
+
+  .tip-card {
+    background: #F0F7FF;
+    border: 1px solid #C8DDF5;
+    border-right: 4px solid #4A90D9;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 0.85rem;
+    color: #2A5080;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  /* ===== TEXT ===== */
+  p.body-text {
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+
+  /* ===== MAPS BUTTON ===== */
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #4285F4;
+    color: white;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: 'Tajawal', sans-serif;
+    transition: all 0.2s ease;
+    margin-top: 6px;
+  }
+
+  .map-btn:hover {
+    background: #2968D5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66,133,244,0.35);
+  }
+
+  /* ===== FLIGHT CARD ===== */
+  .flight-card {
+    background: linear-gradient(135deg, #0F1F45, #162B60);
+    border-radius: var(--radius-sm);
+    padding: 20px 22px;
+    color: white;
+    margin: 12px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flight-card::before {
+    content: '✈';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    opacity: 0.06;
+  }
+
+  .flight-route {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .flight-city {
+    text-align: center;
+    flex: 1;
+  }
+
+  .flight-city .code {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+
+  .flight-city .name {
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .flight-arrow {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.5;
+    font-size: 1.2rem;
+  }
+
+  .flight-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .flight-detail-item {
+    font-size: 0.78rem;
+  }
+
+  .flight-detail-item .fl-label {
+    opacity: 0.55;
+    display: block;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1px;
+  }
+
+  .flight-detail-item .fl-value {
+    font-weight: 600;
+  }
+
+  /* ===== HOTEL CARD ===== */
+  .hotel-card {
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 10px 0;
+  }
+
+  .hotel-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .hotel-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+
+  .hotel-info p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  /* ===== TICKET/PRICE BADGE ===== */
+  .price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #FFF0F0;
+    border: 1px solid #FFCBC8;
+    color: #C0392B;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  /* ===== EDIT MODE ===== */
+  body.edit-mode [contenteditable] {
+    outline: 2px dashed var(--gold);
+    border-radius: 4px;
+    padding: 2px 4px;
+    cursor: text;
+    transition: all 0.2s ease;
+  }
+
+  body.edit-mode [contenteditable]:focus {
+    outline: 2px solid var(--gold);
+    background: var(--gold-pale);
+  }
+
+  body.edit-mode [contenteditable]:hover {
+    background: rgba(196,151,58,0.05);
+  }
+
+  .edit-hint {
+    display: none;
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-align: center;
+    padding: 6px;
+    background: var(--gold-pale);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border: 1px dashed var(--gold);
+  }
+
+  body.edit-mode .edit-hint { display: block; }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--cream-dark), transparent);
+    margin: 18px 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    background: var(--white);
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .footer .footer-flag { font-size: 1.5rem; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero { padding: 50px 16px 70px; }
+    .day-header { padding: 18px 20px; }
+    .day-body { padding: 18px 20px; }
+    .timeline { padding-right: 22px; }
+    .summary-card { padding: 20px 18px; }
+    .flight-city .code { font-size: 1.4rem; }
+    .highlight-card { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <span class="hero-plane">✈️</span>
+  <h1 class="hero-title" contenteditable="false">رحلة لندن</h1>
+  <p class="hero-subtitle">London — April 2026</p>
+  <div class="hero-travelers">
+    👨‍👩‍👧‍👦 الأم العزيزة · خالتي نورة · دحومي · محمد
+  </div>
+</header>
+
+<!-- ===== SUMMARY CARD ===== -->
+<div class="summary-wrapper">
+  <div class="summary-card">
+    <div class="summary-item">
+      <span class="summary-icon">📅</span>
+      <div class="summary-label">تاريخ المغادرة</div>
+      <div class="summary-value">24 أبريل 2026</div>
+    </div>
+    <div class="summary-item">
+      <span class="summary-icon">🏠</span>
+      <div class="summary-label">العودة</div>
+      <div class="summary-value">2 مايو 2026</div>
+    </div>
+    <div class="summary-item">
+      <span class="summary-icon">🌙</span>
+      <div class="summary-label">عدد الليالي</div>
+      <div class="summary-value">7 ليالي</div>
+    </div>
+    <div class="summary-item">
+      <span class="summary-icon">🏨</span>
+      <div class="summary-label">الفندق</div>
+      <div class="summary-value">Marble Arch Hotel</div>
+    </div>
+    <div class="summary-item">
+      <span class="summary-icon">👥</span>
+      <div class="summary-label">المسافرون</div>
+      <div class="summary-value">4 أشخاص</div>
+    </div>
+    <div class="summary-item">
+      <span class="summary-icon">🛫</span>
+      <div class="summary-label">المطار</div>
+      <div class="summary-value">Heathrow T4</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EDIT CONTROLS ===== -->
+<div class="edit-toggle-bar">
+  <button class="edit-toggle-btn" id="editToggle" onclick="toggleEdit()">
+    ✏️ تفعيل وضع التعديل
+  </button>
+  <button class="save-btn" id="saveBtn" onclick="saveEdits()">
+    💾 حفظ التعديلات
+  </button>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav-sticky" id="dayNav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="scrollToDay('day1', this)">✈️ اليوم 1</button>
+    <button class="nav-btn" onclick="scrollToDay('day2', this)">🏛️ اليوم 2</button>
+    <button class="nav-btn" onclick="scrollToDay('day3', this)">🏛️ اليوم 3</button>
+    <button class="nav-btn" onclick="scrollToDay('day4', this)">🦌 اليوم 4</button>
+    <button class="nav-btn" onclick="scrollToDay('day5', this)">⚓ اليوم 5</button>
+    <button class="nav-btn" onclick="scrollToDay('day6', this)">🏖️ اليوم 6</button>
+    <button class="nav-btn" onclick="scrollToDay('day7', this)">🛒 اليوم 7</button>
+    <button class="nav-btn" onclick="scrollToDay('day8', this)">🏠 اليوم 8</button>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main class="main">
+
+  <div class="edit-hint">✏️ وضع التعديل مفعّل — اضغط على أي نص لتعديله مباشرة</div>
+
+  <!-- ==================== DAY 1 ==================== -->
+  <div class="day-card" id="day1">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">١</div>
+        <div>
+          <div class="day-title" contenteditable="false">السفر والاستقرار</div>
+          <div class="day-date">الجمعة — 24 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">✈️</span>
+    </div>
+    <div class="day-body">
+
+      <div class="section-label">🛫 رحلة المغادرة</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">⏰ 05:00 ص</div>
+          <p class="body-text" contenteditable="false">نطلع من البيت</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="time-badge">🍳 قبل الطيران</div>
+          <p class="body-text" contenteditable="false">فطور في <strong>Key Lounge</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Key+Lounge+Riyadh+Airport" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">✈️ 09:15 ص</div>
+          <p class="body-text" contenteditable="false">الإقلاع من الرياض بإذن الله</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">🇬🇧 02:15 م</div>
+          <p class="body-text" contenteditable="false">الوصول لندن بإذن الله</p>
+        </div>
+
+      </div>
+
+      <!-- Flight Card -->
+      <div class="flight-card">
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="code">RUH</div>
+            <div class="name">الرياض</div>
+          </div>
+          <div class="flight-arrow">
+            ──── ✈️ ────
+          </div>
+          <div class="flight-city">
+            <div class="code">LHR</div>
+            <div class="name">لندن هيثرو</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <span class="fl-label">إقلاع</span>
+            <span class="fl-value">09:15 ص</span>
+          </div>
+          <div class="flight-detail-item">
+            <span class="fl-label">وصول</span>
+            <span class="fl-value">02:15 م</span>
+          </div>
+          <div class="flight-detail-item">
+            <span class="fl-label">مطار الوصول</span>
+            <span class="fl-value">Heathrow T4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">🏨 الفندق</div>
+
+      <div class="hotel-card">
+        <span class="hotel-icon">🏨</span>
+        <div class="hotel-info">
+          <h4 contenteditable="false">The Marble Arch Hotel by Thistle</h4>
+          <p>ركوب السيارة المحجوزة من المطار إلى الفندق</p>
+          <a class="map-btn" href="https://maps.app.goo.gl/GAB3mYoTg5NKpQnM7" target="_blank">📍 موقع الفندق على Maps</a>
+        </div>
+      </div>
+
+      <div class="section-label">🌆 بعد الوصول</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">نسوي تشيك إن أو نحط الشنط بالفندق</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">راحة خفيفة مع قهوة أو شاي</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">مشي خفيف حول منطقة السكن إذا كان هناك نشاط</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="time-badge">🍕 العشاء</div>
+          <p class="body-text" contenteditable="false">بيتزا هت مقابل الفندق</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Pizza+Hut+Marble+Arch+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">نمر <strong>Tesco</strong> بقالة</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Tesco+Marble+Arch+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="tip-card">
+        💡 <span contenteditable="false">ما نبالغ في البرنامج لأن اليوم فيه سفر طويل وتعب — خذوا راحتكم</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 2 ==================== -->
+  <div class="day-card" id="day2">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٢</div>
+        <div>
+          <div class="day-title" contenteditable="false">قلب لندن السياحي</div>
+          <div class="day-date">السبت — 25 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🏛️</span>
+    </div>
+    <div class="day-body">
+
+      <p class="body-text" contenteditable="false">منطقة <strong>Westminster / South Bank / Covent Garden / Oxford</strong></p>
+
+      <div class="section-label">🌅 الفطور والصباح</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">الفطور في مكان قريب من الفندق</p>
+        </div>
+      </div>
+
+      <div class="section-label">🗺️ المعالم الصباحية</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">زيارة <strong>Big Ben</strong> والتصوير الخارجي عند المنطقة</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Big+Ben+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="gold-card">
+            <h4>🎡 London Eye</h4>
+            <p contenteditable="false">تذكرة الدخول: <span class="price-badge">💷 ~198 ريال للشخص</span></p>
+          </div>
+          <a class="map-btn" href="https://maps.google.com/?q=London+Eye" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">🌊 بعد London Eye</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">نتمشى على <strong>South Bank</strong> إذا حبين أجواء النهر</p>
+          <a class="map-btn" href="https://maps.google.com/?q=South+Bank+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">ثم نروح <strong>Covent Garden</strong> بالباص أو المترو</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Covent+Garden+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">☀️ الظهيرة</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">التمشية في <strong>Covent Garden</strong></p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">المرور على <strong>Leicester Square</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Leicester+Square+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">دخول <strong>M&M's World</strong> إذا كان مناسبًا</p>
+          <a class="map-btn" href="https://maps.google.com/?q=M%26Ms+World+London+Leicester+Square" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">ثم <strong>China Town</strong> مشيًا، لأنها قريبة جدًا</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Chinatown+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">🛍️ العصر</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">المرور على <strong>Fortnum & Mason</strong> — مناسب للهدايا والشاي والحلويات</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Fortnum+and+Mason+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">بعده نروح <strong>Oxford Street</strong> — تمشية خفيفة مع إمكانية قهوة من <strong>Half Million</strong> إذا كانت مناسبة على الطريق</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Oxford+Street+London" target="_blank">📍 Oxford Street</a>
+          <a class="map-btn" href="https://maps.google.com/?q=Half+Million+Coffee+London" target="_blank" style="margin-right:6px;">📍 Half Million</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">🍽️ المساء</div>
+      <div class="highlight-card">
+        <span class="icon">🍴</span>
+        <div class="content">
+          <h4 contenteditable="false">العشاء في Mercato Mayfair</h4>
+          <p>سوق طعام راقي في قلب Mayfair</p>
+        </div>
+        <a class="map-btn" href="https://maps.google.com/?q=Mercato+Mayfair+London" target="_blank">📍 Maps</a>
+      </div>
+
+      <div class="divider"></div>
+      <div class="tip-card">
+        💡 <span contenteditable="false">إضافة ذكية: لو الوقت يسمح نمر على <strong>Trafalgar Square</strong> أو <strong>Piccadilly Circus</strong> لأنهما قريبان من المسار</span>
+      </div>
+      <div class="places-grid" style="margin-top:8px;">
+        <a class="place-chip" href="https://maps.google.com/?q=Trafalgar+Square+London" target="_blank"><span class="map-icon">📍</span>Trafalgar Square</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Piccadilly+Circus+London" target="_blank"><span class="map-icon">📍</span>Piccadilly Circus</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 3 ==================== -->
+  <div class="day-card" id="day3">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٣</div>
+        <div>
+          <div class="day-title" contenteditable="false">متاحف + هارودز + عشاء عربي</div>
+          <div class="day-date">الأحد — 26 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🏛️</span>
+    </div>
+    <div class="day-body">
+
+      <p class="body-text" contenteditable="false">منطقة <strong>South Kensington / المتاحف / Harrods</strong></p>
+
+      <div class="section-label">🍳 الفطور</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">⏰ 09:00 ص</div>
+          <p class="body-text" contenteditable="false">الخروج من الفندق</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">🥐 09:30 — 11:00 ص</div>
+          <p class="body-text" contenteditable="false">فطور في <strong>Bursa London</strong> (في منطقة Hyde Park)</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Bursa+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+      </div>
+
+      <div class="section-label">🔬 المتحف</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">🕛 11:00 ص</div>
+          <p class="body-text" contenteditable="false">نروح إلى <strong>Science Museum</strong></p>
+          <div class="gold-card">
+            <h4>🎟️ تنبيه مهم</h4>
+            <p contenteditable="false">الحجز عندكم الساعة 12:00 ظهرًا — لا تتأخرون!</p>
+          </div>
+          <a class="map-btn" href="https://maps.google.com/?q=Science+Museum+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+      </div>
+
+      <div class="section-label">🛍️ بعد المتحف</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">الخروج إلى منطقة <strong>South Kensington</strong> أو <strong>Knightsbridge</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=South+Kensington+London" target="_blank">📍 South Kensington</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">نروح إلى <strong>Harrods</strong> بالباص أو مشيًا حسب النشاط والوقت</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Harrods+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">☕ العصر</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">تمشية داخل هارودز أو حوله</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">قهوة/حلويات خفيفة في المنطقة إذا ودكم</p>
+        </div>
+      </div>
+
+      <div class="section-label">🍽️ المساء</div>
+      <div class="highlight-card">
+        <span class="icon">🍴</span>
+        <div class="content">
+          <h4 contenteditable="false">العشاء في فريج صويلح مقابل هارودز</h4>
+          <p>عشاء عربي راقي بعد يوم متاحف وتسوق</p>
+        </div>
+        <a class="map-btn" href="https://maps.google.com/?q=Freij+Swaileh+Harrods+London" target="_blank">📍 Maps</a>
+      </div>
+
+      <div class="divider"></div>
+      <div class="tip-card">
+        💡 <span contenteditable="false">إضافة مناسبة: إذا بقيت طاقة، المرور على <strong>Kensington Gardens</strong> أو <strong>Hyde Park</strong> قرب هارودز — جميلين وقريبين ومريحين بعد المتحف</span>
+      </div>
+      <div class="places-grid" style="margin-top:8px;">
+        <a class="place-chip" href="https://maps.google.com/?q=Kensington+Gardens+London" target="_blank"><span class="map-icon">📍</span>Kensington Gardens</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Hyde+Park+London" target="_blank"><span class="map-icon">📍</span>Hyde Park</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 4 ==================== -->
+  <div class="day-card" id="day4">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٤</div>
+        <div>
+          <div class="day-title" contenteditable="false">Richmond والطبيعة</div>
+          <div class="day-date">الاثنين — 27 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🦌</span>
+    </div>
+    <div class="day-body">
+
+      <p class="body-text" contenteditable="false">يوم <strong>Richmond</strong> + أجواء الغزلان والطبيعة</p>
+
+      <div class="section-label">🍳 الفطور</div>
+      <div class="places-grid">
+        <a class="place-chip" href="https://maps.google.com/?q=Starbucks+Richmond+London" target="_blank"><span class="map-icon">☕</span>Starbucks</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Paul+Bakery+London" target="_blank"><span class="map-icon">🥐</span>Paul Bakery</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Gails+Bakery+London" target="_blank"><span class="map-icon">🥖</span>Gail's</a>
+      </div>
+
+      <div class="section-label">🚂 البرنامج</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">ركوب القطار من <strong>Waterloo</strong> إلى <strong>Richmond</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Waterloo+Station+London" target="_blank">📍 Waterloo Station</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">جولة في <strong>Richmond town center</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Richmond+Town+Centre+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">مشي على النهر في <strong>Richmond Riverside</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Richmond+Riverside+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">الدخول إلى <strong>Richmond Park</strong> ومشاهدة الغزلان</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Richmond+Park+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">نزهة خفيفة وسناك داخل الحديقة</p>
+        </div>
+
+      </div>
+
+      <div class="section-label">🗓️ تنظيم اليوم</div>
+
+      <div class="gold-card">
+        <h4>🌅 صباحًا</h4>
+        <p contenteditable="false">الوصول إلى ريتشموند — قهوة خفيفة + تمشية في البلدة</p>
+      </div>
+
+      <div class="gold-card">
+        <h4>☀️ منتصف اليوم</h4>
+        <p contenteditable="false">دخول الحديقة والتصوير ومشاهدة الغزلان</p>
+      </div>
+
+      <div class="gold-card">
+        <h4>🌤️ العصر</h4>
+        <p contenteditable="false">الغداء أو سناك في Richmond ثم الرجوع إلى لندن قبل المغرب</p>
+      </div>
+
+      <div class="section-label">🍽️ المساء</div>
+      <div class="tip-card">
+        🌊 <span contenteditable="false">عشاء مطل على التايمز — يُفضَّل اختيار مطعم في منطقة الجنوب أو قرب النهر ليكون اليوم كله متناغم</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 5 ==================== -->
+  <div class="day-card" id="day5">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٥</div>
+        <div>
+          <div class="day-title" contenteditable="false">السوق + النهر + Greenwich</div>
+          <div class="day-date">الثلاثاء — 28 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">⚓</span>
+    </div>
+    <div class="day-body">
+
+      <p class="body-text" contenteditable="false"><strong>Borough Market + Tower Bridge + Greenwich</strong></p>
+
+      <div class="section-label">🍳 الفطور</div>
+      <p class="body-text" contenteditable="false">على حسب الصحيان 😄</p>
+
+      <div class="section-label">🛒 الصباح</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false"><strong>Borough Market</strong></p>
+          <div class="gold-card">
+            <h4>⏰ أوقات الدوام</h4>
+            <p contenteditable="false">يفتح عادة من 10:00 ص إلى 5:00 م</p>
+          </div>
+          <a class="map-btn" href="https://maps.google.com/?q=Borough+Market+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+      </div>
+
+      <div class="section-label">🏰 بعد السوق</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">نروح إلى <strong>Tower Bridge + Tower of London</strong></p>
+          <p class="body-text" style="color:var(--text-muted);font-size:0.82rem;" contenteditable="false">دخول Tower of London اختياري حسب الرغبة والوقت</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank">📍 Tower Bridge</a>
+          <a class="map-btn" href="https://maps.google.com/?q=Tower+of+London" target="_blank" style="margin-right:6px;">📍 Tower of London</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">☀️ الظهيرة</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">المرور على <strong>The Garden at 120</strong> لالتقاط الصور والراحة القصيرة</p>
+          <a class="map-btn" href="https://maps.google.com/?q=The+Garden+at+120+Fenchurch+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+      </div>
+
+      <div class="section-label">⛵ الرحلة النهرية</div>
+      <div class="highlight-card">
+        <span class="icon">🚢</span>
+        <div class="content">
+          <h4 contenteditable="false">قارب من Tower Millennium Pier إلى Greenwich Pier</h4>
+          <p>تجربة رائعة على نهر التايمز</p>
+        </div>
+        <a class="map-btn" href="https://maps.google.com/?q=Tower+Millennium+Pier+London" target="_blank">📍 Maps</a>
+      </div>
+
+      <div class="section-label">🌍 في Greenwich</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">نتمشى إلى <strong>Prime Meridian</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Prime+Meridian+Greenwich+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">المرور على <strong>Greenwich Market</strong> إذا فيه وقت</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Greenwich+Market+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">🍽️ المساء</div>
+      <div class="highlight-card">
+        <span class="icon">🍗</span>
+        <div class="content">
+          <h4 contenteditable="false">العشاء في Nando's Greenwich</h4>
+          <p>دجاج برتغالي لذيذ لختم يوم حافل</p>
+        </div>
+        <a class="map-btn" href="https://maps.google.com/?q=Nandos+Greenwich+London" target="_blank">📍 Maps</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 6 ==================== -->
+  <div class="day-card" id="day6">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٦</div>
+        <div>
+          <div class="day-title" contenteditable="false">Brighton — يوم البحر</div>
+          <div class="day-date">الأربعاء — 29 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🏖️</span>
+    </div>
+    <div class="day-body">
+
+      <div class="section-label">🚂 الفطور في القطار</div>
+      <p class="body-text" contenteditable="false">نروح إلى <strong>Brighton</strong> بالقطار من لندن — الفطور على القطار</p>
+      <a class="map-btn" href="https://maps.google.com/?q=Brighton+UK" target="_blank">📍 Brighton على Maps</a>
+
+      <div class="section-label">🌊 الصباح</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">نتمشى على <strong>Brighton Beach</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Brighton+Beach+UK" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">المرور على <strong>Brighton Palace Pier</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Brighton+Palace+Pier+UK" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">الجلوس على البحر أو تصوير الواجهة البحرية</p>
+        </div>
+
+      </div>
+
+      <div class="section-label">☀️ الظهيرة</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">الغداء في منطقة قريبة من الشاطئ أو وسط المدينة</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">المرور على <strong>The Lanes</strong> — ممرات ومحلات صغيرة جميلة جدًا</p>
+          <a class="map-btn" href="https://maps.google.com/?q=The+Lanes+Brighton+UK" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">🌆 العصر</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">زيارة <strong>Royal Pavilion</strong> من الخارج أو الداخل إذا ودكم</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Royal+Pavilion+Brighton+UK" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">قهوة أو آيس كريم قرب البحر</p>
+        </div>
+
+      </div>
+
+      <div class="section-label">🌙 المساء</div>
+      <div class="highlight-card">
+        <span class="icon">🚂</span>
+        <div class="content">
+          <h4 contenteditable="false">الرجعة إلى لندن بالقطار</h4>
+          <p>نهاية جميلة ليوم بحري هادئ ومريح</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-label">⭐ اقتراحات Brighton</div>
+      <div class="places-grid">
+        <a class="place-chip" href="https://maps.google.com/?q=Brighton+Pier+UK" target="_blank"><span class="map-icon">🎡</span>Brighton Pier</a>
+        <a class="place-chip" href="https://maps.google.com/?q=The+Lanes+Brighton+UK" target="_blank"><span class="map-icon">🛍️</span>The Lanes</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Royal+Pavilion+Brighton+UK" target="_blank"><span class="map-icon">🏰</span>Royal Pavilion</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Brighton+Seafront+UK" target="_blank"><span class="map-icon">🌊</span>Seafront Walk</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 7 ==================== -->
+  <div class="day-card" id="day7">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٧</div>
+        <div>
+          <div class="day-title" contenteditable="false">Camden + شمال لندن</div>
+          <div class="day-date">الخميس — 30 أبريل 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🛒</span>
+    </div>
+    <div class="day-body">
+
+      <div class="section-label">🛒 الصباح — Camden Market</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <p class="body-text" contenteditable="false">نروح إلى <strong>Camden Market</strong></p>
+          <a class="map-btn" href="https://maps.google.com/?q=Camden+Market+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">جولة في السوق وتجربة الأكل الشعبي أو السناكات</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">تمشية على <strong>Regent's Canal</strong> إذا كان الجو مناسبًا</p>
+          <a class="map-btn" href="https://maps.google.com/?q=Regents+Canal+Camden+London" target="_blank">📍 افتح في Maps</a>
+        </div>
+
+      </div>
+
+      <div class="section-label">✨ إضافات قريبة</div>
+      <div class="places-grid">
+        <a class="place-chip" href="https://maps.google.com/?q=Primrose+Hill+London" target="_blank"><span class="map-icon">📍</span>Primrose Hill</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Regents+Park+London" target="_blank"><span class="map-icon">📍</span>Regent's Park</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Stables+Market+Camden+London" target="_blank"><span class="map-icon">📍</span>Stables Market</a>
+        <a class="place-chip" href="https://maps.google.com/?q=Camden+Lock+London" target="_blank"><span class="map-icon">📍</span>Camden Lock</a>
+      </div>
+
+      <div class="divider"></div>
+      <div class="tip-card">
+        💡 <span contenteditable="false"><strong>Primrose Hill</strong> للمنظر والتصوير · <strong>Regent's Park</strong> إذا حابين وقت أهدأ ومشي لطيف · <strong>Camden Lock</strong> للتصوير وأجواء السوق</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== DAY 8 ==================== -->
+  <div class="day-card" id="day8">
+    <div class="day-header">
+      <div class="day-header-left">
+        <div class="day-number">٨</div>
+        <div>
+          <div class="day-title" contenteditable="false">يوم العودة إلى الرياض</div>
+          <div class="day-date">الجمعة — 1 مايو 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🏠</span>
+    </div>
+    <div class="day-body">
+
+      <div class="section-label">🧳 مغادرة الفندق</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot highlight"></div>
+          <div class="time-badge">⏰ 11:00 ص</div>
+          <p class="body-text" contenteditable="false">الخروج من الفندق</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="body-text" contenteditable="false">الطريق إلى المطار تقريبًا ساعة حسب الزحمة</p>
+        </div>
+      </div>
+
+      <!-- Return Flight -->
+      <div class="flight-card">
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="code">LHR</div>
+            <div class="name">لندن هيثرو</div>
+          </div>
+          <div class="flight-arrow">
+            ──── ✈️ ────
+          </div>
+          <div class="flight-city">
+            <div class="code">RUH</div>
+            <div class="name">الرياض</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail-item">
+            <span class="fl-label">إقلاع</span>
+            <span class="fl-value">4:15 م — الجمعة 1 مايو</span>
+          </div>
+          <div class="flight-detail-item">
+            <span class="fl-label">مطار المغادرة</span>
+            <span class="fl-value">Heathrow — Terminal 4</span>
+          </div>
+          <div class="flight-detail-item">
+            <span class="fl-label">الوصول</span>
+            <span class="fl-value">12:55 ص — السبت 2 مايو</span>
+          </div>
+          <div class="flight-detail-item">
+            <span class="fl-label">مطار الوصول</span>
+            <span class="fl-value">الرياض — المبنى 2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gold-card" style="margin-top:16px;">
+        <h4>🌙 وصول الرياض</h4>
+        <p contenteditable="false">السبت 2 مايو 2026 — الساعة 12:55 صباحًا — مطار الرياض، المبنى 2</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== TRIP OVERVIEW ==================== -->
+  <div class="day-card" style="border-top: 4px solid var(--gold);">
+    <div class="day-header" style="background: linear-gradient(135deg, #7B4F1A, #C4973A);">
+      <div class="day-header-left">
+        <div class="day-number" style="background:white; color:var(--gold);">✨</div>
+        <div>
+          <div class="day-title">ملخص شكل الرحلة</div>
+          <div class="day-date">8 أيام — لندن April/May 2026</div>
+        </div>
+      </div>
+      <span class="day-emoji">🗺️</span>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot highlight"></div><p class="body-text" contenteditable="false"><strong>اليوم الأول:</strong> سفر واستقرار ✈️</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><p class="body-text" contenteditable="false"><strong>اليوم الثاني:</strong> قلب لندن السياحي 🏛️</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><p class="body-text" contenteditable="false"><strong>اليوم الثالث:</strong> متحف + هارودز + عشاء 🛍️</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><p class="body-text" contenteditable="false"><strong>اليوم الرابع:</strong> ريتشموند والطبيعة 🦌</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><p class="body-text" contenteditable="false"><strong>اليوم الخامس:</strong> السوق + النهر + غرينتش ⚓</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><p class="body-text" contenteditable="false"><strong>اليوم السادس:</strong> برايتون والبحر 🏖️</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><p class="body-text" contenteditable="false"><strong>اليوم السابع:</strong> كامدن 🛒</p></div>
+        <div class="timeline-item"><div class="timeline-dot highlight"></div><p class="body-text" contenteditable="false"><strong>اليوم الثامن:</strong> العودة 🏠</p></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-flag">🇬🇧</div>
+  <p style="margin-top:8px;font-weight:600;color:var(--navy);">رحلة لندن 2026</p>
+  <p style="margin-top:4px;">للأم العزيزة · خالتي نورة · دحومي · محمد</p>
+  <p style="margin-top:4px; opacity:0.6;">24 أبريل — 2 مايو 2026 · London, United Kingdom</p>
+</footer>
+
+<script>
+  // ===== EDIT MODE =====
+  let editMode = false;
+
+  function toggleEdit() {
+    editMode = !editMode;
+    const btn = document.getElementById('editToggle');
+    const saveBtn = document.getElementById('saveBtn');
+    const editables = document.querySelectorAll('[contenteditable]');
+
+    if (editMode) {
+      document.body.classList.add('edit-mode');
+      editables.forEach(el => el.setAttribute('contenteditable', 'true'));
+      btn.textContent = '✅ وضع التعديل مفعّل';
+      btn.classList.add('active');
+      saveBtn.classList.add('visible');
+    } else {
+      document.body.classList.remove('edit-mode');
+      editables.forEach(el => el.setAttribute('contenteditable', 'false'));
+      btn.textContent = '✏️ تفعيل وضع التعديل';
+      btn.classList.remove('active');
+      saveBtn.classList.remove('visible');
+    }
+  }
+
+  function saveEdits() {
+    const editables = document.querySelectorAll('[contenteditable]');
+    const saved = {};
+    editables.forEach((el, i) => {
+      saved['el_' + i] = el.innerHTML;
+    });
+    try {
+      localStorage.setItem('london_trip_edits', JSON.stringify(saved));
+      showToast('✅ تم حفظ التعديلات!');
+    } catch(e) {
+      showToast('⚠️ تعذّر الحفظ في هذا المتصفح');
+    }
+  }
+
+  function loadEdits() {
+    try {
+      const saved = JSON.parse(localStorage.getItem('london_trip_edits'));
+      if (!saved) return;
+      const editables = document.querySelectorAll('[contenteditable]');
+      editables.forEach((el, i) => {
+        if (saved['el_' + i] !== undefined) {
+          el.innerHTML = saved['el_' + i];
+        }
+      });
+    } catch(e) {}
+  }
+
+  // Toast notification
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.style.cssText = `
+      position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+      background:var(--navy); color:white; padding:12px 24px;
+      border-radius:50px; font-family:'Tajawal',sans-serif; font-size:0.9rem;
+      font-weight:600; z-index:9999; box-shadow:0 8px 30px rgba(0,0,0,0.2);
+      animation: fadeInUp 0.3s ease;
+    `;
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2800);
+  }
+
+  // ===== NAVIGATION =====
+  function scrollToDay(id, btn) {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = document.getElementById('dayNav').offsetHeight + 12;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // Active nav on scroll
+  function updateNav() {
+    const days = ['day1','day2','day3','day4','day5','day6','day7','day8'];
+    const navH = document.getElementById('dayNav').offsetHeight + 20;
+    let current = 0;
+    days.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < navH + 60) {
+        current = i;
+      }
+    });
+    document.querySelectorAll('.nav-btn').forEach((b, i) => {
+      b.classList.toggle('active', i === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+
+  // Load saved edits on page load
+  loadEdits();
+</script>
+</body>
+</html>
